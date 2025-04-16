@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-first: #efe1c4;
+  --color-second: #fff5e0;
+  --color-thirdy: #d8b386;
+  --color-main-text: #4d3921;
+  --color-main-blue: #00bbff;
+  --color-main-yellow: #ffe100;
+  --color-main-orange: #ff8800;
+  --color-main-red: #ff4242;
 }
 
-@theme inline {
+/* :root {
+  --first: #efe1c4;
+  --second: #fff5e0;
+  --thirdy: #d8b386;
+  --main-text: #4d3921;
+  --main-blue: #00BBFF;
+  --main-yellow: #FFE100;
+  --main-orange: #FF8800;
+  --main-red: #FF4242;
+} */
+
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-first: #1f1f1f;
+    --color-second: #2a2a2a;
+    --color-thirdy: #616161;
+    --color-main-text: #f2f2f2;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-first);
+  color: var(--color-main-text);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  section {
+    @apply flex items-center justify-center h-screen w-screen;
+  }
+
+  input {
+    @apply focus:outline-none
+  }
+
+  button {
+    @apply h-10 rounded-full hover:brightness-80 font-bold
+  }
+}
+
+@layer components {
+  .main {
+    @apply h-screen w-screen;
+  }
 }
