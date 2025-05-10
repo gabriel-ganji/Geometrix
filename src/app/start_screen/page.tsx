@@ -1,8 +1,32 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { Geometrix } from "../components/geometrix";
+
 const StartScreen = () => {
+
+  const router = useRouter();
+
+  useEffect(() => {
+    //Only for testing use cookie instead
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      router.push("/login");
+    } else {
+
+      setTimeout(() => {
+        router.push("/levels");
+      }, 7500);
+
+    }
+  }, []);
+
   return (
     <section>
-      <div className="flex h-screen w-screen items-center justify-center">
-        <h1>GEOMETRIX</h1>
+      <div className="animate-bounce" >
+        <Geometrix />
       </div>
     </section>
   );

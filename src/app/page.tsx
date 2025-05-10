@@ -20,10 +20,10 @@ export default function Home() {
 
   return (
     <section>
-    <div className="flex h-screen w-screen items-center justify-center">
-      <h1>GEOMETRIX</h1>
-    </div>
-  </section>
+      <div className="flex h-screen w-screen items-center justify-center">
+        <h1>GEOMETRIX</h1>
+      </div>
+    </section>
   );
 
 }
