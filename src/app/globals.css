@@ -46,23 +46,23 @@ body {
 
 @layer base {
   section {
-    @apply flex flex-col items-center justify-center h-screen w-screen;
+    @apply flex flex-col items-center justify-start h-screen w-screen px-4 sm:px-12 py-4;
   }
 
   input {
-    @apply focus:outline-none
+    @apply focus:outline-none;
   }
 
   button {
-    @apply h-10 rounded-full hover:brightness-80 font-bold
+    @apply h-10 rounded-full hover:brightness-80 font-bold;
   }
 
   h1 {
-    @apply text-[2.5rem] font-bold
+    @apply text-[2.5rem] font-bold;
   }
 
   h2 {
-    @apply text-[1.5rem] font-bold
+    @apply text-[1.5rem] font-bold;
   }
 }
 

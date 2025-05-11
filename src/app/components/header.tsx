@@ -1,4 +1,3 @@
-import { Geometrix } from "./geometrix";
 import { LuSettings2 } from "react-icons/lu";
 
 export const Header = () => {

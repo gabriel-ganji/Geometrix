@@ -24,6 +24,7 @@ const StartScreen = () => {
         <section>
             <Header />
             <Level />
+            <Footer />
         </section>
     );
 };
