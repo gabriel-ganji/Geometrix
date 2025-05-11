@@ -64,6 +64,10 @@ body {
   h2 {
     @apply text-[1.5rem] font-bold;
   }
+
+  h3 {
+    @apply text-[1rem] font-bold;
+  }
 }
 
 @layer components {

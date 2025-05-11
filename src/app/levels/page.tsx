@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Header } from "../components/header";
 import { Level } from "../components/level";
+import { Footer } from "../components/footer";
 
 const StartScreen = () => {
 
