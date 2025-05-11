@@ -60,6 +60,10 @@ body {
   h1 {
     @apply text-[2.5rem] font-bold
   }
+
+  h2 {
+    @apply text-[1.5rem] font-bold
+  }
 }
 
 @layer components {
