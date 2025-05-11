@@ -46,7 +46,7 @@ body {
 
 @layer base {
   section {
-    @apply flex flex-col items-center justify-start h-screen w-screen px-4 sm:px-12 py-4;
+    @apply flex flex-col items-center justify-center h-screen w-screen px-4 sm:px-12 py-4;
   }
 
   input {

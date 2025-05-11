@@ -18,7 +18,7 @@ const StartScreen = () => {
 
       setTimeout(() => {
         router.push("/levels");
-      }, 7500);
+      }, 5000);
 
     }
   }, []);
