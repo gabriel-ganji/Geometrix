@@ -6,7 +6,7 @@ export const Footer = () => {
         <footer className="flex items-center justify-between w-full border-t-2 border-gray-700 pt-4">
             <div className="flex items-center gap-2">
                 <PiUserCircleFill size={30} />
-                Gabriel Fernandes
+                Geoboy
             </div>
             <h3>XP: 0000</h3>
         </footer>
