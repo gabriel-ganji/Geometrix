@@ -1,5 +1,9 @@
+'use client';
+
 import { QuestionAndAnswer2 } from "@/types/answer";
 import QuestionAnswer from "../_components/levelQuestion";
+import { Header } from "@/app/components/header";
+import { useRouter } from "next/navigation";
 
 const questions: QuestionAndAnswer2[] = [
   {
@@ -29,6 +33,19 @@ const questions: QuestionAndAnswer2[] = [
   }
 ];
 
-export const CircleLevel = () => {
-  <QuestionAnswer questions={questions} />
+const CircleLevel = () => {
+
+  const router = useRouter();
+
+  return (
+    <div>
+      <div className="mt-4" onClick={() => router.back()}>
+        <Header />
+      </div>
+      <QuestionAnswer questions={questions} />
+    </div>
+
+  )
 }
+
+export default CircleLevel;
