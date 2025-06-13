@@ -57,7 +57,7 @@ const QuestionAnswer = ({ questions }: { questions: QuestionAndAnswer2[] }) => {
   return (
     <div className="p-4 max-w-md mx-auto relative min-h-screen">
       {/* Barra de Progresso */}
-      <div className="w-full bg-gray-200 h-2 rounded-full mb-6 overflow-hidden mb-48">
+      <div className="w-full bg-white h-2 rounded-full mb-6 overflow-hidden mb-48">
         <div
           className="bg-green-400 h-full transition-all duration-300"
           style={{ width: `${progress}%` }}
@@ -111,12 +111,12 @@ const QuestionAnswer = ({ questions }: { questions: QuestionAndAnswer2[] }) => {
 
       {/* Card Final */}
       {showResults && (
-        <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gray-700 border-t border-gray-300 shadow-xl p-6 flex flex-col items-center justify-center z-50">
+        <div className="absolute bottom-0 left-0 w-full h-[40%] bg-second border-t border-gray-300 shadow-xl p-6 flex flex-col items-center justify-center z-50">
           <h2 className="text-2xl font-bold mb-2 text-green-600">Fase Concluída!</h2>
           <p className="text-lg mb-1">🎯 Porcentagem de acerto: <strong>{percentage}%</strong></p>
           <p className="text-lg mb-1">⚡ XP ganho: <strong>{xp} XP</strong></p>
           <p className="text-lg">⏱️ Tempo: <strong>{timeTaken} segundos</strong></p>
-          <button className='bg-green-700 w-full mt-24' onClick={() => router.push("/levels")}>
+          <button className='bg-green-700 w-full mt-24 text-white' onClick={() => router.push("/levels")}>
             Finalizar
           </button>
         </div>

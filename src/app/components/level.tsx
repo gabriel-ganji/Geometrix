@@ -11,23 +11,23 @@ export const Level = () => {
             <h2 className="w-full">Fase Atual</h2>
             <div className="flex flex-col items-center justify-center h-full w-full gap-6 pt-9">
                 <button 
-                    className="flex items-center justify-center rounded-full bg-main-text h-36 w-36"
+                    className="flex items-center justify-center rounded-full bg-second h-36 w-36"
                     onClick={() => router.push("levels/square")}
                 >
-                    <FaRegSquare color={"black"} size={60} />
+                    <FaRegSquare color={"main-text"} size={60} />
                 </button>
                 <p></p>
                 <button 
-                    className="flex items-center justify-center rounded-full bg-main-text h-36 w-36"
+                    className="flex items-center justify-center rounded-full bg-second h-36 w-36"
                     onClick={() => router.push("levels/circle")}
                     >
-                    <FaRegCircle color={"black"} size={60} />
+                    <FaRegCircle color={"main-text"} size={60} />
                 </button>
                 <button 
-                    className="flex items-center justify-center ounded-full bg-main-text h-36 w-36"
+                    className="flex items-center justify-center ounded-full bg-second h-36 w-36"
                     onClick={() => router.push("levels/triangle")}
                 >
-                    <LuTriangle color={"black"} size={60} />
+                    <LuTriangle color={"main-text"} size={60} />
                 </button>
             </div>
         </section>
