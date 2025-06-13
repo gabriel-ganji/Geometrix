@@ -54,7 +54,7 @@ body {
   }
 
   button {
-    @apply h-10 rounded-full hover:brightness-80 font-bold;
+    @apply h-12 rounded-full hover:brightness-80 font-bold;
   }
 
   h1 {
