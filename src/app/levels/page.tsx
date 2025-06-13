@@ -19,7 +19,7 @@ const StartScreen = () => {
         } else {
             // router.push("/start_screen");
         }
-    }, []);
+    }, [router]);
 
     return (
         <section>
