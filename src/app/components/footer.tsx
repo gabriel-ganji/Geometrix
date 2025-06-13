@@ -1,3 +1,4 @@
+"use client";
 
 import { PiUserCircleFill } from "react-icons/pi";
 
