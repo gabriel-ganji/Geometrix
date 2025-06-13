@@ -12,6 +12,8 @@ const QuestionAnswer = ({ questions }: { questions: QuestionAndAnswer2[] }) => {
   const [endTime, setEndTime] = useState<number | null>(null);
   const [showResults, setShowResults] = useState(false);
 
+  const userXP = localStorage.getItem("xp"); 
+
   const totalQuestions = questions.length;
   const currentQuestion = questions[currentQuestionIndex];
   const progress = ((currentQuestionIndex + (selectedAnswer ? 1 : 0)) / totalQuestions) * 100;
@@ -55,7 +57,7 @@ const QuestionAnswer = ({ questions }: { questions: QuestionAndAnswer2[] }) => {
    const router = useRouter();
 
   return (
-    <div className="p-4 max-w-md mx-auto relative min-h-screen">
+    <div className="max-w-md mx-auto relative min-h-screen p-4">
       {/* Barra de Progresso */}
       <div className="w-full bg-white h-2 rounded-full mb-6 overflow-hidden mb-48">
         <div
@@ -116,7 +118,12 @@ const QuestionAnswer = ({ questions }: { questions: QuestionAndAnswer2[] }) => {
           <p className="text-lg mb-1">🎯 Porcentagem de acerto: <strong>{percentage}%</strong></p>
           <p className="text-lg mb-1">⚡ XP ganho: <strong>{xp} XP</strong></p>
           <p className="text-lg">⏱️ Tempo: <strong>{timeTaken} segundos</strong></p>
-          <button className='bg-green-700 w-full mt-24 text-white' onClick={() => router.push("/levels")}>
+          <button className='bg-green-700 w-full mt-24 text-white' 
+            onClick={() => { 
+              const newXP = Number(userXP) + xp;
+              localStorage.setItem("xp", String(newXP));
+              router.push("/levels"); 
+            }}>
             Finalizar
           </button>
         </div>

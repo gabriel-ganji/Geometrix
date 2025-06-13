@@ -1,9 +1,10 @@
 'use client';
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { QuestionAndAnswer2 } from "@/types/answer";
 import QuestionAnswer from "../_components/levelQuestion";
 import { Header } from "@/app/components/header";
-import { useRouter } from "next/navigation";
 
 const questions: QuestionAndAnswer2[] = [
   {
@@ -56,15 +57,64 @@ const questions: QuestionAndAnswer2[] = [
 ];
 
 const TriangleLevel = () => {
-
   const router = useRouter();
-  
+  const [showExplanation, setShowExplanation] = useState(true);
+
+  const handleStart = () => {
+    setShowExplanation(false);
+  };
+
   return (
-    <div>
+    <div className="">
       <div className="mt-4" onClick={() => router.back()}>
         <Header />
       </div>
-      <QuestionAnswer questions={questions} />
+
+      {showExplanation ? (
+        <div className="mt-6 max-w-2xl mx-4 bg-white text-black p-6 rounded-xl shadow">
+          <h2 className="text-2xl font-bold mb-4">Entendendo os Triângulos</h2>
+          <p className="mb-2">
+            Um <strong>triângulo</strong> é uma figura geométrica com <strong>três lados</strong> e <strong>três ângulos internos</strong>.
+          </p>
+          <p className="mb-2">
+            A soma dos ângulos internos de qualquer triângulo é sempre <strong>180°</strong>.
+          </p>
+          <p className="mb-2">
+            A <strong>área</strong> de um triângulo é dada por:
+            <br />
+            <code>Área = (base × altura) / 2</code>
+          </p>
+          <p className="mb-2">
+            Os tipos mais comuns são:
+            <ul className="list-disc list-inside">
+              <li>Equilátero – 3 lados e ângulos iguais</li>
+              <li>Isósceles – 2 lados iguais</li>
+              <li>Escaleno – 3 lados diferentes</li>
+              <li>Retângulo – um ângulo de 90°</li>
+            </ul>
+          </p>
+
+          {/* SVG ilustrativo */}
+          <div className="my-6 flex justify-center">
+            <svg width="240" height="200" viewBox="0 0 240 200">
+              <polygon points="40,160 200,160 120,40" fill="#dbeafe" stroke="black" strokeWidth="2" />
+              <line x1="120" y1="40" x2="120" y2="160" stroke="red" strokeDasharray="5,5" strokeWidth="2" />
+              <text x="115" y="30" fontSize="12" fill="black">Vértice</text>
+              <text x="60" y="170" fontSize="12" fill="black">Base</text>
+              <text x="125" y="100" fontSize="12" fill="red">Altura</text>
+            </svg>
+          </div>
+
+          <button
+            onClick={handleStart}
+            className="mt-4 bg-main-blue text-white px-6 py-2 rounded hover:opacity-90"
+          >
+            Começar Quiz
+          </button>
+        </div>
+      ) : (
+        <QuestionAnswer questions={questions} />
+      )}
     </div>
   );
 };

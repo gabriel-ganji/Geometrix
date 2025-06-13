@@ -9,9 +9,9 @@ export default function Home() {
 
   useEffect(() => {
     //Only for testing use cookie instead
-    const token = localStorage.getItem("token");
+    const name = localStorage.getItem("name");
 
-    if (!token) {
+    if (!name) {
       router.push("/login");
     } else {
       router.push("/start_screen");
